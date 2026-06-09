@@ -1,0 +1,7 @@
+interface:
+  display_name: "Smart People Prep"
+  short_description: "Prepare sharp high-context conversations"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#2563EB"
+  default_prompt: "Use $smart-people-prep to turn my messy context into one intro line, proof points, one strong question, likely pushback, and a follow-up bridge."
