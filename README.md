@@ -2,20 +2,65 @@
 
 Know what to say before talking to someone who thinks fast.
 
-Smart People Prep turns messy context into a short, useful conversation kit: one self-intro line, three proof points, one context-extracting question, likely pushback, a behavior rule, and a follow-up bridge.
+**Use it when:** you have a short conversation with someone senior, want to learn one thing, and tend to over-explain when nervous.
 
-Most prep tools make a big briefing document. This skill is for the moment before a conference, interview, coffee chat, mentor meeting, founder conversation, office hour, or recruiting call when you need sharper language and a better question.
+**Returns:** one opening line, a conversation goal, three proofs, one strong question, likely pushback, a stopping rule, and a conditional follow-up.
 
-Built from the idea that strong conversations start with context: ask first, listen for what matters, then say one relevant thing with evidence.
+## Actual user case
 
-## What It Helps With
+> Prepare me for a 15-minute conference conversation with the CTO of an agent-infrastructure startup. She cares about evaluation and production reliability. I built a local MCP workflow plus instrumentation for repeated reads and context saturation, but I have no large-scale production metrics. My goal is to learn which reliability failure their team still cannot measure. I tend to over-explain architecture when nervous.
 
-- Turn a messy project explanation into a 10-second intro
-- Stop over-explaining before the other person has context
-- Choose the one question most likely to reveal what matters
-- Practice the first skeptical pushback without sounding defensive
-- Leave with a follow-up bridge when there is real fit
-- Prepare quickly when attention is scattered
+## What the skill returns
+
+> **Say this first**
+>
+> “I work on agent evaluation, and recently built a local MCP workflow instrumented to detect repeated reads and context saturation—small-scale so far, but it made me curious about what production agent failures remain effectively invisible.”
+>
+> **Conversation goal**
+>
+> Learn which reliability failure their team can observe after something goes wrong but still cannot measure or predict early—and whether your evaluation experience could help frame it.
+>
+> **Three proofs**
+>
+> - You built a working MCP-based agent workflow, not merely a benchmark proposal.
+> - You instrumented concrete behavioral failure signals: repeated reads and context saturation.
+> - You think in terms of detection and evaluation, while being honest that you have not validated the approach at production scale.
+>
+> **Ask this**
+>
+> “What reliability failure do you recognize in customer incidents, but still can't reliably surface early through telemetry or evaluations?”
+>
+> Then stop. Let her choose the problem.
+>
+> **Bridge if relevant**
+>
+> “That's close to the kind of problem I enjoy: turning an observed failure pattern into a measurable signal and then testing whether it predicts degraded behavior.”
+>
+> **Likely pushback**
+>
+> **Q: “But does your instrumentation work at production scale?”**
+>
+> “I don't know yet—I've only validated it locally. What I can show is that repeated reads and context saturation became observable rather than anecdotal. The next question I'd test is whether those signals remain predictive across longer, more varied production traces.”
+>
+> **Behavior rule**
+>
+> Answer in two layers: one sentence first, then pause. Explain implementation only if she explicitly asks “how?”
+>
+> Internal cue: **problem → signal → evidence → stop.**
+>
+> **Follow-up**
+>
+> “I appreciated your point about [specific failure]. I'd like to sketch how I might turn it into an observable signal and a small evaluation—would it be useful if I sent you a one-page outline?”
+
+The result is designed for use during the conversation: one question, an honest proof boundary, and a stopping cue.
+
+## Try it
+
+```text
+Use $smart-people-prep. Give me one intro, one question, likely pushback, a stopping rule, and a conditional follow-up.
+```
+
+Give it who you may meet, what they care about, your goal, your strongest honest proof, and what you tend to do when nervous.
 
 ## Install
 
@@ -23,40 +68,4 @@ Built from the idea that strong conversations start with context: ask first, lis
 npx skills add myfeng10/smart-people-prep
 ```
 
-Then restart your agent.
-
-## Example Prompt
-
-```text
-Use $smart-people-prep. I may meet a founder working on AI developer tools. My project is messy, but I want one clear intro, one good question, and the likely pushback.
-```
-
-## Core Idea
-
-Do not try to impress everyone.
-
-Find the other person's context, say the smallest relevant truth, prove it, and stop before the signal gets diluted.
-
-## Output Shape
-
-The skill returns:
-
-- the line to say first
-- the conversation goal
-- three proof points
-- one context-extracting question
-- a relevant bridge
-- one likely pushback and answer
-- one behavior rule
-- a follow-up bridge
-- one thing not to lead with
-
-## Origin
-
-This skill is adapted from SmartPeoplePrep, a personal preparation system for turning raw project work, event notes, and conversation anxiety into short, evidence-backed language for high-context conversations.
-
-## Actual before / after
-
-The same 15-minute CTO conversation scenario scored `10/10` before and `10/10` after in a blind comparison. The existing skill already kept the proof boundary, asked one context-extracting question, handled production-scale pushback honestly, and gave a useful stopping rule.
-
-See the [public evaluation note](https://github.com/myfeng10/myfeng10/blob/main/skills-evaluation.md#full-scorecard) for the frozen-suite method and full scorecard.
+Restart your agent, then invoke it with `$smart-people-prep`.
