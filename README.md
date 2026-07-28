@@ -54,3 +54,9 @@ The skill returns:
 ## Origin
 
 This skill is adapted from SmartPeoplePrep, a personal preparation system for turning raw project work, event notes, and conversation anxiety into short, evidence-backed language for high-context conversations.
+
+## Actual before / after
+
+The same 15-minute CTO conversation scenario scored `10/10` before and `10/10` after in a blind comparison. The existing skill already kept the proof boundary, asked one context-extracting question, handled production-scale pushback honestly, and gave a useful stopping rule.
+
+See the [public evaluation note](https://github.com/myfeng10/myfeng10/blob/main/skills-evaluation.md#full-scorecard) for the frozen-suite method and full scorecard.
